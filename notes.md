@@ -1,4 +1,4 @@
-## syncdb, migrate, makemigrations and createsuperuser commands
+## Database setup in Django 1.8
 
 I'd like to use Django 1.8 as part of the tutorial, not Django 1.6.4, as currently stated in the Django Carrots website.
 The main difference as the trainees are concerned is in the way to setup the database. As South is now part of the django core modules, we must considered ``syncdb`` as deprecated, and should use the following sequence of commands:
@@ -58,3 +58,6 @@ Running migrations:
   Rendering model states... DONE
   Applying polls.0001_initial... OK
 ```
+
+## Spicing up the Poll model?
+The ``polls.Poll`` model can be spiced up by adding the [``auto_now_add``](https://docs.djangoproject.com/en/1.8/ref/models/fields/#django.db.models.DateField), to automatically set the ``pub_date`` attribute on save.
