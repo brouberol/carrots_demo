@@ -17,5 +17,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^polls/$', 'polls.views.index'),
+    url(r'^polls/(?P<poll_id>\d+)/$', 'polls.views.detail'),
+    url(r'^polls/(?P<poll_id>\d+)/results/$', 'polls.views.results'),
+    url(r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+# Note: maybe mention that we could also have a urls.py file in the polls
+# app, and include the polls.urls module here, to make apps truly independant.
